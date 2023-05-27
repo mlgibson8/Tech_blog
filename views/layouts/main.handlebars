@@ -1,0 +1,47 @@
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <link 
+        rel ='stylesheet'
+        href='../../public/jass.css'
+        type='text/css'
+        />
+        <title> {{title}} </title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <div id='header-head'>
+                    <h1 id='header-logo'>Tech_Blog</h1>
+                    {{#if username}}
+                    <p id='loggedin'><span>Welcome:</span>
+                    <em style='font-weight:bold'>{{username}}</em>
+                    </p>
+                    {{/if}}
+                </div>
+                <nav>
+                    <a class='nav-link' href='/'>Home</a>
+                    <a class='nav-link' href='/dashboard'>dashboard</a>
+                    {{#if loggedIn}}
+                    <a class="nav-link" id='logout'>Logout</a>
+
+                    {{else}}
+                    <a class='nav-link' href='/login'>Login</a>
+                    <a class='nav-link' href='/register'>Register</a>
+                    {{/if}}
+
+                </nav>
+                <div id="bg"></div>
+            </header>
+            <main> 
+                {{{body}}}
+            </main>
+        </div>
+        </body>
+        </html>
+        <script src="/javascripts/main.js"></script>
+        {{#if loggedIn}}
+        <script src="/javascripts/logout.js"></script>
+        {{/if}}
+     
