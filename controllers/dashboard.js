@@ -35,12 +35,11 @@ router.get('/', withAuth, async (req, res) => {
             }
             post.reverse();
             res.render('dashboard', {post, loggedIn: req.session.loggedIn, username: req.session.username});
-         }); 
-            })
-            .catch(err => {
+         })
+           .catch(err => {
                 console.log(err);
                 res.status(500).json(err);
             });
-        
+});
             
             module.exports = router;
