@@ -23,14 +23,14 @@ router.get('/', withAuth, async (req, res) => {
                 const description = dbPostData[0].dataValues.description;
                 const date = dbPostData[0].dataValues.created_at;
                 const postId = dbPostData[0].dataValues.id;
-                Post.push({title, description, date, postId});
+                post.push({title, description, date, postId});
             } else {
                 dbPostData.forEach(post => {
                     const title = post.dataValues.title;
                     const description = post.dataValues.description;
                     const date = post.dataValues.created_at;
                     const postId = post.dataValues.id;
-                    Post.push({title, description, date, postId});
+                    post.push({title, description, date, postId});
                 });
             }
             post.reverse();

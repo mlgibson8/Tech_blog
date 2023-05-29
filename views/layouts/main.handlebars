@@ -22,7 +22,7 @@
                 </div>
                 <nav>
                     <a class='nav-link' href='/'>Home</a>
-                    <a class='nav-link' href='/dashboard'>dashboard</a>
+                    <a class='nav-link' href='../dashboard.handlebars'>dashboard</a>
                     {{#if loggedIn}}
                     <a class="nav-link" id='logout'>Logout</a>
 
@@ -40,8 +40,8 @@
         </div>
         </body>
         </html>
-        <script src="/javascripts/main.js"></script>
+        <script src="../../public/JS/main.js"></script>
         {{#if loggedIn}}
-        <script src="/javascripts/logout.js"></script>
+        <script src="../../public/JS/logout.js"></script>
         {{/if}}
      
