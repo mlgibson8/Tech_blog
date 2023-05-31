@@ -30,5 +30,6 @@
 ## License
     
 ## Deployed Application URL
-    https://github.com/mlgibson8/Tech_blog
+![Heroku](https://mlgibsontechblog.herokuapp.com),
+![Github](https://github.com/mlgibson8/Tech_blog)
 
