@@ -3,7 +3,7 @@
 ## Description
   This is a bloggin application
 ## Screenshots
-![Screenshot](undefined)
+![Screenshot](https://github.com/mlgibson8/Tech_blog/blob/main/tech.png)
 ## Table of Contents
 * [Installation](#installation)
 * [Features](#features)
@@ -30,6 +30,6 @@
 ## License
     
 ## Deployed Application URL
-![Heroku](https://mlgibsontechblog.herokuapp.com),
-![Github](https://github.com/mlgibson8/Tech_blog)
+[Heroku](https://mlgibsontechblog.herokuapp.com),
+[Github](https://github.com/mlgibson8/Tech_blog)
 
