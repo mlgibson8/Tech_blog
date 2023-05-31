@@ -1,47 +1,50 @@
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,user-scalable=no" />
-        <link 
-        rel ='stylesheet'
-        href='../../public/jass.css'
-        type='text/css'
-        />
-        <title> {{title}} </title>
-    </head>
-    <body>
-        <div class="wrapper">
-            <header>
-                <div id='header-head'>
-                    <h1 id='header-logo'>Tech_Blog</h1>
-                    {{#if username}}
-                    <p id='loggedin'><span>Welcome:</span>
-                    <em style='font-weight:bold'>{{username}}</em>
-                    </p>
-                    {{/if}}
-                </div>
-                <nav>
-                    <a class='nav-link' href='/'>Home</a>
-                    <a class='nav-link' href='../dashboard.handlebars'>dashboard</a>
-                    {{#if loggedIn}}
-                    <a class="nav-link" id='logout'>Logout</a>
-
-                    {{else}}
-                    <a class='nav-link' href='/login'>Login</a>
-                    <a class='nav-link' href='/register'>Register</a>
-                    {{/if}}
-
-                </nav>
-                <div id="bg"></div>
-            </header>
-            <main> 
-                {{{body}}}
-            </main>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, user-scalable=no' />
+    <link
+      rel='stylesheet'
+      href='../../stylesheets/styles.css'
+      type='text/css'
+    />
+    <link rel='icon' type='image/x-icon' href='/images/favicon.ico' />
+    <title>The_Tech_Blog</title>
+  </head>
+  {{! sets the body with a wrapper, header and main}}
+  <body>
+    <div class='wrapper'>
+      <header>
+        <div id='header-head'>
+          <h1 id='header-logo'>The Tech Blog</h1>
+          {{! if logged in, it will display the username}}
+          {{#if username}}
+            <p id='loggedin'><span>welcome:</span>
+              <em style='font-weight: bold'>{{username}}</em></p>
+          {{/if}}
         </div>
-        </body>
-        </html>
-        <script src="../../public/JS/main.js"></script>
-        {{#if loggedIn}}
-        <script src="../../public/JS/logout.js"></script>
-        {{/if}}
-     
+        {{! sets the nav bar}}
+        <nav>
+          <a class='navItem' href='/'>Home</a>
+          <a class='navItem' href='/dashboard'>Dashboard</a>
+         {{! sets the login/logout button. to start a session}}
+          {{#if loggedIn}}
+            <a class='navItem' id='logout'>Logout</a>
+          {{else}}
+            <a class='navItem' href='/login'>Login</a>
+          {{/if}}
+        </nav>
+
+        <div id='bg'></div>
+      </header>
+      {{! sets the main body for the page}}
+      <main>
+        {{{body}}}
+      </main>
+    </div>
+  </body>
+</html>
+{{! scripts for the page, if logged in, it will display the logout script}}
+<script src='/javascript/main.js'></script>
+{{#if loggedIn}}
+  <script src='/javascript/logout.js'></script>
+{{/if}}

@@ -1,0 +1,40 @@
+{{! sets container for login}}
+<div class='login-container'>
+  <h1>Login here</h1>
+  <form id='login-form'>
+    {{! sets input fields for login, email and password}}
+    <input type='email' id='email-login' placeholder='Email  *required' />
+    <input
+      type='password'
+      id='password-login'
+      placeholder='Password  *required'
+    />
+    {{! sets status for login}}
+    <h1 id='signin-status'>Fill in required values</h1>
+    <button id='login-btn' type='submit'>Login</button>
+  </form>
+  </div>
+  {{! sets container for signup}}
+<hr id='loginHr' />
+<div class='signup-container'>
+  <h1>Sign up here!</h1>
+  {{! sets input fields for signup, username, email and password}}
+ 
+  <form id='signup-form'>
+    <input type='text' id='username-signup' placeholder='Username  *required' />
+    <input type='email' id='email-signup' placeholder='Email  *required' />
+
+    <input
+      type='password'
+      id='password-signup'
+      placeholder='Password  *required'
+    />
+    {{! sets status for signup}}
+    <h1 id='signup-status'>Fill in all required inputs with character count
+      at least 5</h1>
+    <button id='submit-btn' type='submit'>Signup</button>
+  </form>
+</div>
+{{! sets scripts}}
+<script src='/javascript/login.js'></script>
+<script src='/javascript/signup.js'></script>

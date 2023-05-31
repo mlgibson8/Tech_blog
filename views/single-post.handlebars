@@ -1,0 +1,70 @@
+{{! sets div for single post}}
+<div id='page-singlepost'>
+  <div id='single-post'>
+    {{! sets the post header}}
+    <div id='post-header'>
+      <p id='post-title'>{{post.title}}</p>
+      <p id='post-date'>{{format_date post.date}}</p>
+    </div>
+    {{! sets the post body}}
+    <p id='post-body'>{{post.description}}</p>
+    <p id='post-user'>- {{post.user}}</p>
+  </div>
+  {{! sets the comment form}}
+  <form id='comment-form'>
+    {{! if the user is logged in, they can comment, otherwise they cannot}}
+    {{#if loggedIn}}
+      <textarea id='comment-field' placeholder='Comment'></textarea>
+      <h1 id='comment-status'>Required character count above 4</h1>
+      <button type='submit'>Submit</button>
+    {{else}}
+    {{! if the user is not logged in, they cannot comment}}
+      <textarea
+        id='comment-field'
+        disabled='true'
+        placeholder='login to comment'
+      ></textarea>
+    {{/if}}
+  </form>
+  {{! sets the comment section}}
+  <hr id='comment-section-divider' />
+  <div id='comment-section'>
+    {{! if there are comments, they will be displayed, otherwise it will say no comments posted}}
+    {{#if post.comments}}
+      {{#each post.comments as |comment|}}
+       {{! sets comments to be editable/deletable if the user is logged in and the comment is theirs}}
+       {{! sets s user commnet class for formatting}}
+        <div id="single-comment" class="users-comment">
+      {{! id to edit the comment}}
+        <div id="comment-control">
+          {{! makes sure its over 4 characters}}
+          <p id="new-comment-status">Make sure the comment is greater than 4 characters</p>
+          {{! shows confirm, edit and delete buttons}}
+          <button data-comment-id="{{comment.commentId}}" id="confirm-comment-{{comment.commentId}}" class='confirm-comment'>Confirm</button>
+          <button data-comment-id="{{comment.commentId}}" id="edit-comment-{{comment.commentId}}" class='edit-comment'>Edit</button>
+          <button data-comment-id="{{comment.commentId}}" id="delete-comment-{{comment.commentId}}" class='delete-comment'>Delete</button>
+        </div>
+        {{else}}
+        {{! if the comment isn't users, it will be displayed like this}}
+        <div id='single-comment'>
+  
+          {{/if}}
+          {{! sets the comment user, text and date}}}
+          <div id='comment-wrapper'>
+            <p id='user'>{{comment.user}}</p>
+            <p id='comment'>{{comment.text}}</p>
+          </div>
+          {{! sets the comment date from the helper }}
+            <p id='comment-date'>{{format_date comment.date}}</p>
+        </div>
+      {{/each}}
+    {{else}}
+    {{! if there are no comments, it will say no comments posted}}
+      <p>No comments posted</p>
+    {{/if}}
+  </div>
+</div>
+{{! sets scripts}}
+<script src='/javascript/add-comment.js'></script>
+<script src='/javascript/edit-comment.js'></script>
+<script src='/javascript/delete-comment.js'></script>

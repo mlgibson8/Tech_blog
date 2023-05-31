@@ -1,16 +1,79 @@
+{{! add post div}}
 <div class='addPost-container'>
-    <h1>Submit Post</h1>
-    <for id='addPost-form'>
-       <input
-         type='text'
-         id="add-post-title"
-         placeholder='Title *required'
-         />
-         <textarea
-         type'text'
-         id='add-post-description'
-            placeholder='Description *required'
-            ></textarea>
+  <h1>Add Post</h1>
+  {{! set up the form to add a post} }}
+  <form id='addPost-form'>
+    <input
+      type='text'
+      id='add-post-title'
+      placeholder='Post Title  *required'
+    />
+    <textarea
+      type='text'
+      id='add-post-desc'
+      placeholder='Post description  *required'
+    ></textarea>
+{{! tells that the post must be at least 5 characters long}}
+    <h1 id='addpost-status'>Fill in all required inputs with character count
+      of at least 5</h1>
+    <button id='add-post' type='submit'>Post</button>
+  </form>
 
-    <h1 id='addpost-status'>Fill in all forms</h1>
 </div>
+{{! sets the dashboard div}}
+<hr id='dashboardHr' />
+{{! link to get your post}}
+<h1 id='your-posts'>Your posts</h1>
+<div id='dashboard-posts'>
+  {{#if posts}}
+  {{! if you don't have any posts, it will say you have no posts}}}
+  {{else}}
+    <p id='no-posts'>You have not uploaded any posts</p>
+  {{/if}}
+{{! sets the posts}}
+  {{#each posts as |post|}}
+    <div id='single-post'>
+      <div id='post-header'>
+        <h1 id='post-title'>{{post.title}}</h1>
+        {{! sets the date}}
+        <p id='post-date'>{{format_date post.date}}</p>
+      </div>
+      <p id='post-body'>
+        {{post.description}}
+      </p>
+      {{! sets the post controls}}
+      <div id='post-controls'>
+        {{! sets the edit post form}}
+        <button
+          data-post-id={{post.postId}}
+          class='edit-post-id'
+          id='edit-post-{{post.postId}}'
+        >Edit post</button>
+        {{! sets the delete post form}}
+        <button
+          data-post-id={{post.postId}}
+          class='delete-post-id'
+          id='delete-post-{{post.postId}}'
+        >Delete post</button>
+        {{! sets the view comments form}}
+        <button
+          data-post-id={{post.postId}}
+          id='view-comments-{{post.postId}}'
+          class='view-comments'
+        >View comments</button>
+        {{! sets the confirm post form}}
+        <button
+          data-post-id={{post.postId}}
+          class='confirm-post'
+          id='confirm-post-{{post.postId}}'
+        >Confirm</button>
+        <p id='edit-post-status'></p>
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{! sets the scripst}}
+<script src='/javascript/add-post.js'></script>
+<script src='/javascript/edit-post.js'></script>
+<script src='/javascript/delete-post.js'></script>
+<script src='/javascript/view-comments.js'></script>
