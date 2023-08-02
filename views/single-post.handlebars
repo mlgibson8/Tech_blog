@@ -40,6 +40,7 @@
           {{! makes sure its over 4 characters}}
           <p id="new-comment-status">Make sure the comment is greater than 4 characters</p>
           {{! shows confirm, edit and delete buttons}}
+          
           <button data-comment-id="{{comment.commentId}}" id="confirm-comment-{{comment.commentId}}" class='confirm-comment'>Confirm</button>
           <button data-comment-id="{{comment.commentId}}" id="edit-comment-{{comment.commentId}}" class='edit-comment'>Edit</button>
           <button data-comment-id="{{comment.commentId}}" id="delete-comment-{{comment.commentId}}" class='delete-comment'>Delete</button>
@@ -49,7 +50,7 @@
         <div id='single-comment'>
   
           {{/if}}
-          {{! sets the comment user, text and date}}}
+          {{! sets the comment user, text and date}}
           <div id='comment-wrapper'>
             <p id='user'>{{comment.user}}</p>
             <p id='comment'>{{comment.text}}</p>
@@ -66,5 +67,5 @@
 </div>
 {{! sets scripts}}
 <script src='/javascript/add-comment.js'></script>
-<script src='/javascript/edit-comment.js'></script>
+<script src='./javascript/edit-comment.js'></script>
 <script src='/javascript/delete-comment.js'></script>

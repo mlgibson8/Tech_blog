@@ -26,7 +26,7 @@
 <h1 id='your-posts'>Your posts</h1>
 <div id='dashboard-posts'>
   {{#if posts}}
-  {{! if you don't have any posts, it will say you have no posts}}}
+  {{! if you don't have any posts, it will say you have no posts}}
   {{else}}
     <p id='no-posts'>You have not uploaded any posts</p>
   {{/if}}
@@ -44,6 +44,10 @@
       {{! sets the post controls}}
       <div id='post-controls'>
         {{! sets the edit post form}}
+        <button 
+        data-post-id="{{post.postId}}"
+        class='add-comment'
+        id='add-comment-{{post.postId}}'>Add Comment</button>
         <button
           data-post-id={{post.postId}}
           class='edit-post-id'
@@ -77,3 +81,4 @@
 <script src='/javascript/edit-post.js'></script>
 <script src='/javascript/delete-post.js'></script>
 <script src='/javascript/view-comments.js'></script>
+<script src='/javascript/add-comment.js'></script>

@@ -1,6 +1,7 @@
 const Post = require('./Post');
 const User = require('./User');
 const Comment = require('./Comment');
+
 // create associations
 // sets up the foreign key relationship between the user and post tables with the foreign key constraint
 User.hasMany(Post, {
@@ -31,4 +32,6 @@ Post.hasMany(Comment, {
   foreignKey: 'post_id',
 });
 
-module.exports = { User, Post, Comment };
+
+
+module.exports = { User, Post, Comment,  };

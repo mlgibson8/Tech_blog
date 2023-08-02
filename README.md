@@ -23,6 +23,7 @@
     setup a server, install nodes, run nodes
 ## Contributors
     mlgibson8
+    Found help with CSS on github (https://github.com/csabbah/fullstack-mvc-tech-blog/blob/main/public/stylesheets/styles.css)
 ## Testing
     npm run test
 ## Questions

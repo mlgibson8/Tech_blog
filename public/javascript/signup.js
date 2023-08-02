@@ -1,7 +1,7 @@
 
 
 const signupForm = document.getElementById('signup-form');
-// Function to add a comment to the database
+// Function to add a comment to the database 
 async function signupFormHandler(event) {
   event.preventDefault();
  // Get the signup input values, username, email, and password
