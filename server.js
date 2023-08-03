@@ -13,7 +13,7 @@ const sequelize = require('./config/connection');
 const app = express();
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 /* db.sequelize.sync().then(function() {
     app.listen(port, function() {
         console.log("App listening on PORT " + port);
