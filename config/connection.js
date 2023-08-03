@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const mysql = require('mysql2');
+const 
 // Load environment variables using dotenv (if you're using it)
 require('dotenv').config();
 
@@ -9,7 +9,7 @@ const { DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_DIALECT } = process.e
 // Create a new Sequelize instance
 const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
   host: DB_HOST,
-  dialect: mysql,
+  dialect: DB_DIALECT,
 });
 
 // Test the connection
