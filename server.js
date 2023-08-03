@@ -14,11 +14,11 @@ const app = express();
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 var port = process.env.PORT || 3000;
-db.sequelize.sync().then(function() {
+/* db.sequelize.sync().then(function() {
     app.listen(port, function() {
         console.log("App listening on PORT " + port);
     })});
-
+ */
 const hbs = exphbs.create({ helpers });
 // sets up our session
 const sess = {
