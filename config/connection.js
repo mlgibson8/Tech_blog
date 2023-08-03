@@ -1,25 +1,21 @@
 const Sequelize = require('sequelize');
-
-// Load environment variables using dotenv (if you're using it)
 require('dotenv').config();
 
-// Retrieve the database credentials from environment variables
-const { DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_DIALECT } = process.env;
+let sequelize;
 
-// Create a new Sequelize instance
-const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
-  host: DB_HOST,
-  dialect: DB_DIALECT,
-});
-
-// Test the connection
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+      host: 'localhost',
+      dialect: 'mysql',
+      port: 3306
+    }
+  );
+}
 
 module.exports = sequelize;
