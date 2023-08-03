@@ -1,6 +1,6 @@
 const Post = require('./post.js');
-const User = require('./User');
-const Comment = require('./Comment');
+const User = require('./user.js');
+const Comment = require('./comment.js');
 
 // create associations
 // sets up the foreign key relationship between the user and post tables with the foreign key constraint
