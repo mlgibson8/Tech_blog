@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-
+const mysql = require('mysql2');
 // Load environment variables using dotenv (if you're using it)
 require('dotenv').config();
 
