@@ -27,7 +27,7 @@
 ## Testing
     npm run test
 ## Questions
-    Please contact me at mlgibson8@gmail.com for any questions.
+    Please contact me at mlgibson8@gmail.com for any questions.a
 ## License
     
 ## Deployed Application URL
